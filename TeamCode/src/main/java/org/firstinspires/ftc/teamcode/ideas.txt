@@ -1,0 +1,10 @@
+y = k +- sqrt(r^2 - (x - h)^2) (h: x-trans, k: y-trans)
+
+path format:
+{
+    x-value (double)
+    y-value (double)
+    heading-rad (double)
+    power-scaling (0.1 - 1.0)
+    name (String)
+}
