@@ -128,20 +128,20 @@ public class drivebase {
 
     ///
     public void usePathFromFile(String fileName, int index) {
-        double x = readWriter.returnFullPath(fileName, index).x_coord;
-        double y = readWriter.returnFullPath(fileName, index).y_coord;
-        double heading = readWriter.returnFullPath(fileName, index).heading;
-        double scale = readWriter.returnFullPath(fileName, index).power;
+        double x = readWriter.readPath(fileName, index).x_coord;
+        double y = readWriter.readPath(fileName, index).y_coord;
+        double heading = readWriter.readPath(fileName, index).heading;
+        double scale = readWriter.readPath(fileName, index).power;
         toPositionScaled(x, y, heading, scale);
     }
     public void runFullPathSequence(String fileName, int counter) {
         int indexes = readWriter.getPathIndexQuantity(fileName);
 
         if (counter <= indexes) {
-            double x = readWriter.returnFullPath(fileName, counter).x_coord;
-            double y = readWriter.returnFullPath(fileName, counter).y_coord;
-            double heading = readWriter.returnFullPath(fileName, counter).heading;
-            double scale = readWriter.returnFullPath(fileName, counter).power;
+            double x = readWriter.readPath(fileName, counter).x_coord;
+            double y = readWriter.readPath(fileName, counter).y_coord;
+            double heading = readWriter.readPath(fileName, counter).heading;
+            double scale = readWriter.readPath(fileName, counter).power;
 
             if (!utility.inRange(currentPos.x, x, 5) && !utility.inRange(currentPos.y, y, 5)) {
                 toPositionScaled(x,y,heading,scale);

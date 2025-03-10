@@ -1,0 +1,41 @@
+{
+ X: 100.0
+ Y: 100.0
+ Heading: 0.0
+ Power Scale: 1.0
+}
+
+{
+ X: 200.0
+ Y: 100.0
+ Heading: 0.0
+ Power Scale: 1.0
+}
+
+{
+ X: 200.0
+ Y: 200.0
+ Heading: 0.0
+ Power Scale: 1.0
+}
+
+{
+ X: 100.0
+ Y: 200.0
+ Heading: 0.0
+ Power Scale: 1.0
+}
+
+{
+ X: 100.0
+ Y: 300.0
+ Heading: 0.0
+ Power Scale: 1.0
+}
+
+{
+ X: 0.0
+ Y: 0.0
+ Heading: 0.0
+ Power Scale: 1.0
+}

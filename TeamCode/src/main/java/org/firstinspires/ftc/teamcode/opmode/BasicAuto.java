@@ -6,7 +6,7 @@ import org.firstinspires.ftc.teamcode.subsystems.drivebase;
 public class BasicAuto extends LinearOpMode {
     public drivebase base = new drivebase(hardwareMap);
     public int stageCounter = 0;
-    public String pathFile = "example.path";
+    public String pathFile = "new.path";
 
     public void runOpMode() {
 
@@ -15,7 +15,7 @@ public class BasicAuto extends LinearOpMode {
         while(opModeIsActive()) {
             base.updateCurrentPoint();
 
-            base.runFullPathSequence(pathFile, 0    );
+            fullPath();
 
             telemetry.addData(
                     "Current Path",
@@ -38,6 +38,9 @@ public class BasicAuto extends LinearOpMode {
     }
     public void stage2() {
         base.usePathFromFile(pathFile, 2);
+    }
+    public void fullPath() {
+        base.runFullPathSequence(pathFile, 0);
     }
 
 
