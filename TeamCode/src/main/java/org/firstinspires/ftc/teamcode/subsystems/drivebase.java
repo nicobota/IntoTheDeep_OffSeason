@@ -126,7 +126,7 @@ public class drivebase {
     public void toPositionScaled(Point target, double targetheading, double scale) {toPositionScaled(target.x, target.y, targetheading, scale);}
     public void toPositionScaled(Position targetposition, double scale) {toPositionScaled(targetposition.x, targetposition.y, targetposition.heading, scale);}
 
-    ///
+    /// Using Path File
     public void usePathFromFile(String fileName, int index) {
         double x = readWriter.readPath(fileName, index).x_coord;
         double y = readWriter.readPath(fileName, index).y_coord;

@@ -1,12 +1,16 @@
 package org.firstinspires.ftc.teamcode.opmode;
 
+import com.arcrobotics.ftclib.gamepad.GamepadEx;
+import com.arcrobotics.ftclib.gamepad.GamepadKeys;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import org.firstinspires.ftc.teamcode.subsystems.drivebase;
 
 public class BasicAuto extends LinearOpMode {
     public drivebase base = new drivebase(hardwareMap);
+    public GamepadEx pad = new GamepadEx(gamepad1);
     public int stageCounter = 0;
     public String pathFile = "new.path";
+    public boolean runFullSequence = false;
 
     public void runOpMode() {
 
@@ -15,7 +19,18 @@ public class BasicAuto extends LinearOpMode {
         while(opModeIsActive()) {
             base.updateCurrentPoint();
 
-            fullPath();
+            if (runFullSequence) {
+                if (pad.wasJustPressed(GamepadKeys.Button.A)) {
+                    fullPath();
+                }
+            }
+            else {
+                if (pad.wasJustPressed(GamepadKeys.Button.A)) {
+                    stage0();
+                    stage1();
+                    stage2();
+                }
+            }
 
             telemetry.addData(
                     "Current Path",
@@ -31,7 +46,6 @@ public class BasicAuto extends LinearOpMode {
 
     public void stage0() {
         base.usePathFromFile(pathFile, 0);
-        // arm action or something
     }
     public void stage1() {
         base.usePathFromFile(pathFile, 1);
