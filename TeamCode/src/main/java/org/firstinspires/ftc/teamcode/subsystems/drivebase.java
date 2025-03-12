@@ -126,6 +126,20 @@ public class drivebase {
     public void toPositionScaled(Point target, double targetheading, double scale) {toPositionScaled(target.x, target.y, targetheading, scale);}
     public void toPositionScaled(Position targetposition, double scale) {toPositionScaled(targetposition.x, targetposition.y, targetposition.heading, scale);}
 
+    /// toPosition along axes, not straight to point
+    public void toPositionXY(double targetx, double targety, double targetheading, double scale) {
+        double errorX = (targetx - currentPos.x); double errorY = (targety - currentPos.y); double errorHeading = (targetheading - botHeading);
+
+        //TODO: CODE
+
+    }
+    public void toPositionXY(Point target, double targetheading, double scale) {
+        toPositionXY(target.x, target.y, targetheading, scale);
+    }
+    public void toPositionXY(Position targetposition, double scale) {
+        toPositionXY(targetposition.x, targetposition.y, targetposition.heading, scale);
+    }
+
     /// Using Path File
     public void usePathFromFile(String fileName, int index) {
         double x = readWriter.readPath(fileName, index).x_coord;
